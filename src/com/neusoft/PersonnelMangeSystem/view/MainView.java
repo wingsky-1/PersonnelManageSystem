@@ -42,7 +42,7 @@ public class MainView {
                 init();
                 break;
             case WORK_INFORMATION:
-                new WorkInformatioView();
+                new WorkInformationView();
                 init();
                 break;
             case CHECK_ON_WORK_ATTENDANCE:

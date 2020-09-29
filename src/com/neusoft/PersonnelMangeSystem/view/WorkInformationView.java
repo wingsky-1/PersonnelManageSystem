@@ -7,8 +7,8 @@ import com.neusoft.PersonnelMangeSystem.util.ViewScanners;
  * @author 火羽白
  * @date 2020/9/28
  */
-public class WorkInformatioView {
-    public WorkInformatioView(){
+public class WorkInformationView {
+    public WorkInformationView(){
         init();
     }
 
