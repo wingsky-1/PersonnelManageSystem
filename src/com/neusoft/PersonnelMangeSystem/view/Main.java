@@ -1,6 +1,5 @@
 package com.neusoft.PersonnelMangeSystem.view;
 
-
 import com.neusoft.PersonnelMangeSystem.entity.Attendance;
 
 import java.sql.Date;
@@ -13,7 +12,5 @@ import java.sql.Timestamp;
 public class Main {
     public static void main(String[] args) {
         new InitView();
-//        System.out.println(new Timestamp(new Attendance(100).getTodayDate().getTime()));
     }
-
 }

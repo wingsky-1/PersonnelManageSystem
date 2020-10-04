@@ -9,11 +9,11 @@ public class User {
     private String empPassword = null;
     private int empLevel = 0;
 
-    public User(){
+    public User() {
 
     }
 
-    public User(int emoNo,String empPassword){
+    public User(int emoNo, String empPassword) {
         this.emoNo = emoNo;
         this.empPassword = empPassword;
     }
@@ -40,5 +40,13 @@ public class User {
 
     public void setEmpLevel(int empLevel) {
         this.empLevel = empLevel;
+    }
+    public static String info(){
+        return "emoNo" + "\t\t" + "empPassword" + "\t\t" + "empLevel";
+    }
+
+    @Override
+    public String toString() {
+        return emoNo +"\t" + empPassword +"\t" + empLevel;
     }
 }

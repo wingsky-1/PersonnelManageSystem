@@ -12,12 +12,12 @@ import java.util.LinkedList;
  * @author 火羽白
  * @date 2020/9/28
  */
-public class AttendanceView {
+public class TodayAttendanceView {
     private static final int ATTENDANCES_MAX_TIMES = 2;
     private LinkedList<Attendance> attendances;
     private final Attendance attendance;
 
-    public AttendanceView() {
+    public TodayAttendanceView() {
         attendance = new Attendance(LoginView.nowUser.getEmoNo());
         init();
     }
@@ -26,7 +26,7 @@ public class AttendanceView {
         attendances = new AttendanceDaoImpl().getTodayAttendanceByEmpNo(attendance);
         if (attendances.size() == ATTENDANCES_MAX_TIMES) {
             ViewPrints.appendHeader();
-            ViewPrints.append(attendance.info());
+            ViewPrints.append(Attendance.info());
             ViewPrints.append(attendances.getFirst().toString());
             ViewPrints.append(attendances.getLast().toString());
             ViewPrints.appendFooter();
@@ -35,7 +35,7 @@ public class AttendanceView {
         }
         if (!attendances.isEmpty()) {
             ViewPrints.appendHeader();
-            ViewPrints.append(attendance.info());
+            ViewPrints.append(Attendance.info());
             ViewPrints.append(attendances.getFirst().toString());
             ViewPrints.appendFooter();
             judgeToAttendance();

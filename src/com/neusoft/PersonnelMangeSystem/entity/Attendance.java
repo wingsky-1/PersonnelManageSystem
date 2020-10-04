@@ -94,7 +94,7 @@ public class Attendance {
         return ViewScanners.SIMPLE_DATE_FORMAT.format(todayDate).split(" ")[0];
     }
 
-    public String info() {
+    public static String info() {
         return "attendanceNo" + "\t" + "empNo" + "\t\t" + "attendanceDate" + "\t\t\t" + "type";
     }
 

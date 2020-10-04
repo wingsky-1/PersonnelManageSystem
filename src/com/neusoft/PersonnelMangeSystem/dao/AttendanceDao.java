@@ -11,8 +11,11 @@ import java.util.LinkedList;
  * @date 2020/9/28
  */
 public interface AttendanceDao {
-    public  LinkedList<Attendance> getAttendanceByEmpNo(Attendance attendance);
-    public  LinkedList<Attendance> getTodayAttendanceByEmpNo(Attendance attendance);
-    public boolean toAttendance(Attendance attendance);
-    public Attendance resultSetToAttendance(ResultSet resultSet) throws SQLException;
+    LinkedList<Attendance> getAllAttendanceByEmpNo(Attendance attendance);
+
+    LinkedList<Attendance> getTodayAttendanceByEmpNo(Attendance attendance);
+
+    boolean toAttendance(Attendance attendance);
+
+    Attendance resultSetToAttendance(ResultSet resultSet) throws SQLException;
 }

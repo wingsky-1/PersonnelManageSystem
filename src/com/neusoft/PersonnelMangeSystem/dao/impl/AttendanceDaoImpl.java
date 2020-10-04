@@ -15,8 +15,28 @@ import java.util.LinkedList;
 public class AttendanceDaoImpl implements AttendanceDao {
 
     @Override
-    public LinkedList<Attendance> getAttendanceByEmpNo(Attendance attendance) {
-        return null;
+    public LinkedList<Attendance> getAllAttendanceByEmpNo(Attendance attendance) {
+        LinkedList<Attendance> res = new LinkedList<>();
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+        ResultSet resultSet = null;
+        try {
+            connection = DbHelps.getConnection();
+            if (connection != null) {
+                String sql = "select ATTENDANCENO, EMPNO, ATTENDANCEDATE, TYPE from ATTENDANCE where EMPNO = ?";
+                preparedStatement = connection.prepareStatement(sql);
+                preparedStatement.setInt(1, attendance.getEmpNo());
+                resultSet = preparedStatement.executeQuery();
+                while (resultSet.next()) {
+                    res.add(resultSetToAttendance(resultSet));
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            DbHelps.closeAll(connection, preparedStatement, resultSet);
+        }
+        return res;
     }
 
     @Override
